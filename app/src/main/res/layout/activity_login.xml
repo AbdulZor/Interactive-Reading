@@ -50,6 +50,7 @@
             app:boxStrokeWidthFocused="2dp"
             app:endIconMode="clear_text"
             app:endIconTint="@color/black"
+            app:errorEnabled="true"
             app:hintTextColor="@color/black"
             app:layout_constraintTop_toBottomOf="@id/guideline_input"
             app:startIconDrawable="@drawable/ic_baseline_person_24"
@@ -57,7 +58,7 @@
 
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/login_phone_number_editText"
+                android:id="@+id/tet_login_email_address"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:inputType="textEmailAddress"
@@ -77,13 +78,14 @@
             app:boxStrokeWidthFocused="2dp"
             app:endIconMode="password_toggle"
             app:endIconTint="@color/black"
+            app:errorEnabled="true"
             app:hintTextColor="@color/black"
             app:layout_constraintTop_toBottomOf="@id/til_email_address"
             app:startIconDrawable="@drawable/ic_baseline_lock_24"
             app:startIconTint="@color/black">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/login_password_editText"
+                android:id="@+id/tet_login_password"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:inputType="textPassword"
@@ -92,16 +94,16 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
+            android:id="@+id/tv_email_password_login_error"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/invalid_credentials"
+            android:paddingHorizontal="10dp"
             android:textColor="@color/red_500"
             android:textSize="12sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/til_password" />
 
         <Button
-            android:enabled="false"
             android:id="@+id/btn_login"
             style="@style/RobotoButtonStyleLight"
             android:layout_width="match_parent"

@@ -17,4 +17,6 @@
     <string name="invalid_credentials">*Your email or password is incorrect.</string>
     <string name="or">OR</string>
     <string name="required">Required.</string>
+    <string name="too_many_requests_error">Too many failed login attempts. Try again later.</string>
+    <string name="google_sign_in_unsuccessful">Google sign in was unsuccessful</string>
 </resources>

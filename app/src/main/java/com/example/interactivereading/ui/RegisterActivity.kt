@@ -44,7 +44,6 @@ class RegisterActivity : AppCompatActivity() {
      * The user is informed if the sign in fails
      */
     private fun createAccount(email: String, password: String) {
-        Log.d(TAG, "createAccount:$email")
         if (!validateForm()) {
             return
         }
