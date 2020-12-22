@@ -34,12 +34,9 @@
                 android:text="@string/create_account"
                 android:textAllCaps="true"
                 android:textColor="@color/black"
-                android:textStyle="bold"
-                android:textSize="40sp" />
-
-
+                android:textSize="40sp"
+                android:textStyle="bold" />
         </RelativeLayout>
-
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -49,7 +46,7 @@
 
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/signup_email"
+                android:id="@+id/til_sign_up_email"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -59,12 +56,14 @@
                 app:boxStrokeWidthFocused="2dp"
                 app:endIconMode="clear_text"
                 app:endIconTint="@color/black"
+                app:errorEnabled="true"
                 app:hintTextColor="@color/black"
                 app:startIconDrawable="@drawable/ic_baseline_person_24"
                 app:startIconTint="@color/black">
 
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tet_sign_up_email"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:inputType="textEmailAddress"
@@ -76,7 +75,7 @@
 
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/signup_password"
+                android:id="@+id/til_sign_up_password"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -85,6 +84,7 @@
                 app:boxStrokeColor="@color/black"
                 app:boxStrokeWidthFocused="2dp"
                 app:endIconTint="@color/black"
+                app:errorEnabled="true"
                 app:hintTextColor="@color/black"
                 app:passwordToggleEnabled="true"
                 app:passwordToggleTint="@color/black"
@@ -93,6 +93,7 @@
 
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tet_sign_up_password"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:inputType="textPassword"
@@ -102,9 +103,15 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
+            <TextView
+                android:id="@+id/tv_password_or_email_error"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/red_500"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent" />
 
         </LinearLayout>
-
 
         <Button
             android:id="@+id/btn_create_account"

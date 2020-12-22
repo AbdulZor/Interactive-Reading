@@ -16,4 +16,5 @@
     <string name="create_account">Create Account</string>
     <string name="invalid_credentials">*Your email or password is incorrect.</string>
     <string name="or">OR</string>
+    <string name="required">Required.</string>
 </resources>
