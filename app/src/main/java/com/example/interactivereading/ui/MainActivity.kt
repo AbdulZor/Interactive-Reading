@@ -1,12 +1,10 @@
-package com.example.interactivereading
+package com.example.interactivereading.ui
 
 import android.os.Bundle
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
-import com.example.interactivereading.databinding.ActivityLoginBinding
+import com.example.interactivereading.R
 import com.example.interactivereading.databinding.ActivityMainBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth

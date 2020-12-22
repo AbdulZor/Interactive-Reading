@@ -1,9 +1,10 @@
-package com.example.interactivereading
+package com.example.interactivereading.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import com.example.interactivereading.R
 import com.example.interactivereading.databinding.ActivityLoginBinding
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -30,7 +31,6 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        setSupportActionBar(findViewById(R.id.toolbar))
 
         auth = Firebase.auth
 
@@ -38,6 +38,10 @@ class LoginActivity : AppCompatActivity() {
 
         binding.signInButton.setSize(SignInButton.SIZE_WIDE)
         binding.signInButton.setOnClickListener { signIn() }
+
+        binding.btnCreateAccount.setOnClickListener {
+            startActivity(Intent(this, RegisterActivity::class.java))
+        }
     }
 
     private fun createSignInRequest() {
@@ -62,7 +66,7 @@ class LoginActivity : AppCompatActivity() {
         val currentUser = auth.currentUser
         if (currentUser != null) {
             Log.i(TAG, "ALREADY LOGGED IN!")
-            val intent: Intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
 
@@ -93,7 +97,6 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    // [START auth_with_google]
     private fun firebaseAuthWithGoogle(idToken: String) {
         val credential = GoogleAuthProvider.getCredential(idToken, null)
         auth.signInWithCredential(credential)
@@ -104,9 +107,12 @@ class LoginActivity : AppCompatActivity() {
                 } else {
                     // If sign in fails, display a message to the user.
                     Log.w(TAG, "signInWithCredential:failure", task.exception)
-                    Snackbar.make(binding.loginActivityMainLayout, getString(R.string.authentication_failed), Snackbar.LENGTH_SHORT).show()
+                    Snackbar.make(
+                        binding.loginActivityMainLayout,
+                        getString(R.string.authentication_failed),
+                        Snackbar.LENGTH_SHORT
+                    ).show()
                 }
             }
     }
-    // [END auth_with_google]
 }
