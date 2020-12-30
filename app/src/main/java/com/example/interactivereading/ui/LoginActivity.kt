@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
-import android.util.Log
 import android.widget.Toast
 import com.example.interactivereading.R
 import com.example.interactivereading.databinding.ActivityLoginBinding
@@ -29,7 +28,6 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
 
     companion object {
-        private const val TAG = "LoginActivity"
         private const val RC_SIGN_IN = 10
     }
 
@@ -69,13 +67,6 @@ class LoginActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         // Check if user is signed in (non-null) and update UI accordingly.
-
-        // Firebase sign out
-        auth.signOut()
-
-        // Google sign out
-        googleSignInClient.signOut()
-
         val currentUser = auth.currentUser
         if (currentUser != null) {
             val intent = Intent(this, MainActivity::class.java)
