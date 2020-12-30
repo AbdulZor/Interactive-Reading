@@ -1,4 +1,4 @@
-package com.example.interactivereading.ui
+package com.example.interactivereading.ui.books
 
 import android.content.Context
 import android.view.LayoutInflater

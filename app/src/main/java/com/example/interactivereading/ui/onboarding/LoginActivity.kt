@@ -1,4 +1,4 @@
-package com.example.interactivereading.ui
+package com.example.interactivereading.ui.onboarding
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,6 +7,7 @@ import android.text.TextUtils
 import android.widget.Toast
 import com.example.interactivereading.R
 import com.example.interactivereading.databinding.ActivityLoginBinding
+import com.example.interactivereading.ui.MainActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions

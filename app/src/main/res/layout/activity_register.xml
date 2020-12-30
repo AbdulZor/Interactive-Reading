@@ -9,7 +9,7 @@
     android:background="@color/yellow"
     android:padding="30dp"
     android:transitionName="transition_signup"
-    tools:context=".ui.RegisterActivity">
+    tools:context=".ui.onboarding.RegisterActivity">
 
     <!--    <androidx.constraintlayout.widget.ConstraintLayout-->
     <!--        android:layout_width="match_parent"-->

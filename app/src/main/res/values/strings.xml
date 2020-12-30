@@ -25,4 +25,8 @@
     <string name="title">Title 1</string>
     <string name="pages">Pages: %1$s</string>
     <string name="sign_out">Sign Out</string>
+    <string name="description">Description</string>
+    <string name="language">Language: %1$s</string>
+    <string name="published_date">Published Date: %1$s</string>
+    <string name="chat">chat</string>
 </resources>

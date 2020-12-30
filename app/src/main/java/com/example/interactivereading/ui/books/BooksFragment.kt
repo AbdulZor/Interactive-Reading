@@ -1,4 +1,4 @@
-package com.example.interactivereading.ui
+package com.example.interactivereading.ui.books
 
 import android.app.SearchManager
 import android.content.Context
@@ -54,8 +54,10 @@ class BooksFragment : Fragment() {
         // observe the LiveData books object to update the RecyclerView when changes happened
         observeBooks()
 
-        //
-        getBooks("Harry Potter")
+        // Default books
+        if (books.isEmpty()) {
+            getBooks("Harry Potter")
+        }
     }
 
     private fun observeBooks() {

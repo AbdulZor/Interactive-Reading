@@ -1,4 +1,4 @@
-package com.example.interactivereading.ui
+package com.example.interactivereading.ui.onboarding
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import com.example.interactivereading.R
+import com.example.interactivereading.ui.MainActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
