@@ -30,9 +30,9 @@ class SplashActivity : AppCompatActivity() {
         // If activity is started, but user is not yet authenticated
         if (auth.currentUser == null) {
             startActivity(Intent(this, LoginActivity::class.java))
+        } else {
+            // If user is authenticated
+            startActivity(Intent(this, MainActivity::class.java))
         }
-
-        // If user is authenticated
-        startActivity(Intent(this, MainActivity::class.java))
     }
 }

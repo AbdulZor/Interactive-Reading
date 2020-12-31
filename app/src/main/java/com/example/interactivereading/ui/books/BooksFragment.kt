@@ -3,7 +3,6 @@ package com.example.interactivereading.ui.books
 import android.app.SearchManager
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import android.view.*
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
@@ -42,7 +41,6 @@ class BooksFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        Log.d(tag, "array books: $books")
         booksAdapter = BooksAdapter(books, ::onBookClick)
         binding.rvBooks.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)

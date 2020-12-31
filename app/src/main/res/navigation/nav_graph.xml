@@ -24,5 +24,14 @@
         <action
             android:id="@+id/action_BookDetailFragment_to_BooksFragment"
             app:destination="@id/BooksFragment" />
+        <action
+            android:id="@+id/action_BookDetailFragment_to_ChatFragment"
+            app:destination="@id/ChatFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ChatFragment"
+        android:name="com.example.interactivereading.ui.chat.ChatFragment"
+        android:label="@string/chat_fragment_label"
+        tools:layout="@layout/fragment_chat">
     </fragment>
 </navigation>

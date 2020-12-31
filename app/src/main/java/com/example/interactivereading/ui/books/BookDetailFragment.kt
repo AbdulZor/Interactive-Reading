@@ -2,8 +2,11 @@ package com.example.interactivereading.ui.books
 
 import android.os.Bundle
 import android.view.*
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.setFragmentResult
+import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.example.interactivereading.R
 import com.example.interactivereading.databinding.FragmentBookDetailBinding
@@ -22,12 +25,15 @@ class BookDetailFragment : Fragment() {
     ): View {
         // Inflate the layout for this fragment
         binding = FragmentBookDetailBinding.inflate(layoutInflater)
-        setHasOptionsMenu(true) // the [onCreateOptionsMenu] of this class is invoked instead of the MainActivity
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.btnChat.setOnClickListener {
+            findNavController().navigate(R.id.action_BookDetailFragment_to_ChatFragment)
+        }
 
         observeBook()
     }

@@ -4,6 +4,7 @@
     <!-- Strings used for fragments for navigation -->
     <string name="books_fragment_label">Books Fragment</string>
     <string name="book_detail_fragment_label">Book detail Fragment</string>
+    <string name="chat_fragment_label">Chat Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
@@ -29,4 +30,10 @@
     <string name="language">Language: %1$s</string>
     <string name="published_date">Published Date: %1$s</string>
     <string name="chat">chat</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="send">SEND</string>
+    <string name="enter_message">Enter message</string>
+    <string name="anonymous">Anonymous</string>
+    <string name="error_sending_message">There was an error sending the message</string>
 </resources>
