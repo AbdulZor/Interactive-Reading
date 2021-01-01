@@ -52,12 +52,32 @@ class ChatFragment : Fragment() {
             this.bookId = book.id
 
             if (this.bookId != null) {
-                val fireBaseRecyclerOptions =
-                    chatViewModel.createFireBaseRecyclerOptions(this, bookId.toString())
-                chatAdapter = ChatAdapter(fireBaseRecyclerOptions)
                 binding.rvMessageList.setHasFixedSize(true)
                 binding.rvMessageList.layoutManager =
                     LinearLayoutManager(context, RecyclerView.VERTICAL, false)
+
+                // Setup adapter
+                val fireBaseRecyclerOptions =
+                    chatViewModel.createFireBaseRecyclerOptions(this, bookId.toString())
+                chatAdapter = ChatAdapter(fireBaseRecyclerOptions)
+                chatAdapter.registerAdapterDataObserver(object :
+                    RecyclerView.AdapterDataObserver() {
+                    override fun onItemRangeInserted(positionStart: Int, itemCount: Int) {
+                        super.onItemRangeInserted(positionStart, itemCount)
+                        val messageCount = chatAdapter.itemCount
+                        val lastVisiblePosition =
+                            (binding.rvMessageList.layoutManager as LinearLayoutManager).findLastCompletelyVisibleItemPosition()
+                        // If the recycler view is initially being loaded or the
+                        // user is at the bottom of the list, scroll to the bottom
+                        // of the list to show the newly added message.
+                        if (lastVisiblePosition == -1 ||
+                            (positionStart >= (messageCount - 1) &&
+                                    lastVisiblePosition == (positionStart - 1))
+                        ) {
+                            binding.rvMessageList.scrollToPosition(positionStart);
+                        }
+                    }
+                })
                 binding.rvMessageList.adapter = chatAdapter
             }
         }
