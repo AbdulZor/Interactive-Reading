@@ -8,19 +8,14 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.interactivereading.R
 import com.example.interactivereading.databinding.FragmentChatBinding
-import com.example.interactivereading.exceptions.ChatMessagePushError
-import com.example.interactivereading.model.ChatMessage
 import com.example.interactivereading.viewmodel.BooksSharedViewModel
 import com.example.interactivereading.viewmodel.ChatViewModel
-import com.firebase.ui.database.FirebaseRecyclerOptions
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
-import com.google.firebase.database.*
 import com.google.firebase.ktx.Firebase
 
 class ChatFragment : Fragment() {
@@ -28,7 +23,6 @@ class ChatFragment : Fragment() {
     private val sharedViewModel: BooksSharedViewModel by activityViewModels()
     private val chatViewModel: ChatViewModel by viewModels()
     private lateinit var auth: FirebaseAuth
-    private lateinit var firebaseDatabase: DatabaseReference
     private lateinit var chatAdapter: ChatAdapter
 
     private var bookId: String? = null
@@ -37,7 +31,6 @@ class ChatFragment : Fragment() {
         super.onCreate(savedInstanceState)
 
         auth = Firebase.auth
-        firebaseDatabase = FirebaseDatabase.getInstance().reference
     }
 
     override fun onCreateView(
@@ -74,7 +67,7 @@ class ChatFragment : Fragment() {
                             (positionStart >= (messageCount - 1) &&
                                     lastVisiblePosition == (positionStart - 1))
                         ) {
-                            binding.rvMessageList.scrollToPosition(positionStart);
+                            binding.rvMessageList.scrollToPosition(positionStart)
                         }
                     }
                 })

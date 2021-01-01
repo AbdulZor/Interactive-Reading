@@ -2,10 +2,8 @@ package com.example.interactivereading.ui.books
 
 import android.os.Bundle
 import android.view.*
-import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.setFragmentResult
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.example.interactivereading.R
