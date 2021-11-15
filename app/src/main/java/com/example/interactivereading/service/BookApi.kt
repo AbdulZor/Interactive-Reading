@@ -10,7 +10,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class BookApi {
     companion object {
-        private const val baseUrl = "https://www.googleapis.com/books/v1/"
+        private const val BASE_URL = "https://www.googleapis.com/books/v1/"
 
         fun createApi(): BookApiService {
             val okHttpClient = OkHttpClient.Builder()
@@ -19,7 +19,7 @@ class BookApi {
                 .build()
 
             val movieApi = Retrofit.Builder()
-                .baseUrl(baseUrl)
+                .baseUrl(BASE_URL)
                 .client(okHttpClient)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
